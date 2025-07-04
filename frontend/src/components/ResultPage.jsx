@@ -51,7 +51,7 @@ function ResultPage() {
       <div className="space-y-4">
         <h3 className="text-2xl font-semibold text-gray-800">Generated ELD Log (Image)</h3>
         <img
-          src={`https://triplogxi.onrender.com/${data.image_url}`}
+          src={data.image_url}
           alt="ELD Log"
           className="w-full border rounded shadow-lg"
         />
