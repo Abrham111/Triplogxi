@@ -9,6 +9,7 @@ djangorestframework==3.16.0
 fonttools==4.58.4
 geographiclib==2.0
 geopy==2.4.1
+gunicorn==23.0.0
 idna==3.10
 kiwisolver==1.4.8
 matplotlib==3.10.3
