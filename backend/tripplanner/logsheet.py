@@ -1,5 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont
 import os
+import cloudinary.uploader
 
 def generate_logsheet_image(logs):
     os.makedirs("backend/media", exist_ok=True)
@@ -74,7 +75,11 @@ def generate_logsheet_image(logs):
 
     out_path = "media/logsheet_output.png"
     img.save(out_path)
-    return "media/logsheet_output.png"
+        
+    # Upload to Cloudinary
+    result = cloudinary.uploader.upload(out_path)
+    image_url = result['secure_url']
+    return image_url
 
 def get_color(status):
     return {
