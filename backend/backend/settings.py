@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+jupq^0$x%==ii-3r11g)cv44a4vg)rw3&0bc@pmtg5p8cz-a2'
+SECRET_KEY = config('SECRET_KEY', default='django-insecure-+jupq^0$x%==ii-3r11g)cv44a4vg)rw3&0bc@pmtg5p8cz-a2')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['triplogxi.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -134,4 +134,7 @@ ORS_API_KEY = config('ORS_API_KEY')
 
 INSTALLED_APPS += ['corsheaders']
 MIDDLEWARE = ['corsheaders.middleware.CorsMiddleware'] + MIDDLEWARE
-CORS_ALLOW_ALL_ORIGINS = True  # For development only
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOWED_ORIGINS = [
+    "https://triplogxi.vercel.app/",
+]
