@@ -11,7 +11,7 @@ function InputForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await axios.post('http://localhost:8000/api/plan-trip/', form);
+    const res = await axios.post('https://triplogxi.onrender.com/api/plan-trip/', form);
     localStorage.setItem('tripData', JSON.stringify(res.data));
     navigate('/results');
   };
